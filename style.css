@@ -1,0 +1,513 @@
+@font-face {
+  font-family: font1;
+  src: url('font/Minecrafter.Alt.ttf');
+}
+@font-face {
+  font-family: font2;
+  src: url('font/Minecrafter.Reg.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins,Sans-Serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+html,body {
+  scroll-behavior: smooth;
+}
+  
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+  
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 35px 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 1.2s;
+}
+  
+@keyframes show-content {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+  
+.navbar .logo {
+  font-size: 30px;
+  font-weight: 700;
+  transition: .5s;
+}
+  
+.navbar .logo:hover {
+  color: aqua;
+}
+
+.navbar ul {
+  display: flex;
+}
+  
+.navbar ul li {
+  list-style: none;
+  margin-left: 35px;
+  transition: .5s;
+  margin-top: 12px;
+}
+  
+.navbar ul li a {
+  font-size: 20px;
+  font-weight: 500;
+  transition: 1s;
+  font-family: font1;
+}
+
+.navbar ul li:hover{
+  scale: 1.05;
+}
+  
+.navbar ul li:hover a,
+.navbar ul li.active a{
+  color: cyan;
+  -webkit-text-stroke: .7px white;  
+}
+
+#menu-icon {
+  padding: 0;
+  font-size: 1.8rem;
+  z-index: 10001;
+  cursor: pointer;
+  margin-left: 0px;;
+  background: cyan;
+  border-radius: 3px;
+  color: #1f242d;
+  display: none;
+}
+  
+.home {
+  gap: 150px;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 60px 12% 0;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 2.3s ;
+  transition: 1.5s;
+  }
+
+.home-info h1 {
+  display: inline-block;
+  font-size: 55px;
+  font-family: font1;
+  transition: 1s;
+  color: white;
+  -webkit-text-stroke: .7px cyan;
+}
+
+.home-info h1:hover{
+  position: relative;
+  display: inline-block;
+  color: cyan;
+  -webkit-text-stroke: .7px white;
+  scale: 0.97;
+}
+
+.home-info h2 {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+  
+.home-info h2 span { 
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: .7px cyan;
+  animation: display-text 10.5s linear infinite;
+  animation-delay: calc(-3.5s * var(--i));
+}
+
+@keyframes display-text {
+  25%,100% {
+    display: none;
+  }
+}
+
+.home-info h2 span:before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0;
+  border-right: 2px solid cyan;
+  color: cyan;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,100% {
+    width: 0;
+  }
+  70%,90% {
+    width: 100%;
+  }
+}
+  
+.home-info p {
+  font-size: 14px;
+  margin: 10px 0 25px;
+  padding: 0;
+  font-weight: 800;
+  line-height: 1.6;
+  font-family: Monospace;
+}
+  
+.home-info .utn-sci {
+  display: flex;
+  align-items: center;
+}
+  
+.utn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: cyan;
+  border: 2px solid cyan;
+  border-radius: 40px;
+  box-shadow: 0 0 10px cyan;
+  font-size: 16px;
+  color: #1f242d;
+  font-weight: 600;
+  transition: .5s;
+}
+  
+.utn:hover {
+  background: transparent;
+  color: cyan;
+  box-shadow: none;
+  scale: 1.05;
+}
+  
+.home-info .utn-sci .sci {
+  margin-left: 10px;
+}
+  
+.home-info .utn-sci .sci a {
+  display: inline-flex;
+  padding: 3px; 
+  border: 2px solid cyan;
+  border-radius: 50%;
+  font-size: 20px;
+  color: cyan;
+  margin: 0 5px;
+  transition: .5s;
+  }
+  
+.home-info .utn-sci .sci a:hover {
+  color: #1f242d;
+  scale: 1.2;
+  filter: drop-shadow(0 0 10px cyan);
+  background-color: cyan;
+}
+
+.home-img {
+  justify-content: center;
+}
+
+.home-img .img-box {
+  position: relative;
+  width: 28vw;
+  height: 28vw;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: conic-gradient( cyan,transparent, transparent, transparent, transparent);
+  transform: rotate(0deg);
+  animation: rotate-border 5s linear infinite;
+}
+
+.home-img .img-box::after {
+  animation-delay: -2.5s;
+}
+
+.home-img .img-box:hover:before,
+.home-img .img-box:hover:after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: conic-gradient( transparent, transparent, transparent, transparent, rgb(172, 1, 1));
+  transform: rotate(0deg);
+  animation: rotate 3s linear infinite;
+}
+
+.home-img .img-box:hover:after {
+  animation-delay: -1.5s;
+}
+  
+@keyframes rotate-border {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home-img .img-box .img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  border-radius: 50%;
+  border: .1px solid #1f242d;
+  display: flex;
+  justify-content: center;
+  z-index: 1;   
+  overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+  position: absolute;
+  display: block;
+  top: -30px;
+  width: 80%;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2em;
+  background: #1f242d;
+  height: 100%;
+  gap: 100px;
+  padding: 150px 12% 0;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 2.3s ;
+  transition: 1.5s;
+}
+
+.about .img-about {
+  text-align: center;
+  position: relative;
+}
+
+.about .img-about img {
+  max-width: 400px;
+  height: auto;
+}
+
+.about-content span {
+  color: #fdfdfd;
+  font-size: .8rem;
+  font-weight: 290;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 100px;
+}
+
+.about-content h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: font1;
+  -webkit-text-stroke: .7px cyan;
+  top: 200px;
+}
+
+.about-content p {
+  font-family: Monospace;
+}
+
+.btn-box {
+  display: inline-block;
+  padding: 10px 30px;
+  justify-content: space-between;
+  background: cyan;
+  color: #1f242d;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: .6s;
+  box-shadow: white;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid cyan;
+  top: 20px;
+}
+
+.btn {
+  color: #1f242d;
+}
+
+.btn:hover {
+  color: cyan;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1f242d;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: .4s;
+}
+
+.btn:hover:before {
+  width: 100%;
+}
+
+.bars-animation {
+  position: absolute;
+  width: 100%;
+  height: 230%;
+  display: flex;
+  z-index: -1;
+}
+
+.bars-animation .bar {
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  transform: translateY(-100%);
+  animation: show-bars 5s ease-in-out forwards;
+  animation-delay: calc( .1s * var(--1));
+  z-index: 200;
+}
+  
+@keyframes show-bars {
+  100% {
+  transform: translateY(0%);
+  }
+}
+
+footer {
+  background-color: gray;
+  margin-top: 200px;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+
+.sosial-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.sosial-icons a {
+  text-decoration: none;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.sosial-icons a i {
+  font-size: 35px;
+  color: #1f242d;
+  opacity: .5;
+}
+
+.sosial-icons a:hover {
+  background-color: cyan;
+  transition: 0.5s;
+  scale: 1.05;
+  box-shadow: 0 0 10px cyan;
+}
+
+.sosial-icons a:hover i{
+  color: #1f242d;
+  transition: 0.5s;
+  scale: 1.05;
+}
+
+.footer-nav {
+  margin: 30px 0;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav ul li a {
+  color: white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.5em;
+  opacity: 0.7;
+  transition: 0.5s;
+  font-family: font1;
+  
+}
+
+.footer-nav ul li a:hover {
+  opacity: 1;
+}
+
+.footer-Botton {
+  background-color: #1f242d;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-Botton p {
+  color: white;
+}
+
+.Designed {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 0px 5px;
+  color: cyan;
+}
