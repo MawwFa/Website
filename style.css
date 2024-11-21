@@ -38,8 +38,8 @@ a {
   z-index: 100;
   visibility: hidden;
   opacity: 0;
-  animation: show-content 1.5s linear forwards;
-  animation-delay: 1.2s;
+  animation: show-content .5s linear forwards;
+  animation-delay: 1s;
 }
   
 @keyframes show-content {
@@ -100,7 +100,7 @@ a {
 }
   
 .home {
-  gap: 150px;
+  gap: 70px;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -108,8 +108,8 @@ a {
   color: #fff;
   visibility: hidden;
   opacity: 0;
-  animation: show-content 1.5s linear forwards;
-  animation-delay: 2.3s ;
+  animation: show-content .8s linear forwards;
+  animation-delay: 1.3s ;
   transition: 1.5s;
   }
 
@@ -125,9 +125,7 @@ a {
 .home-info h1:hover{
   position: relative;
   display: inline-block;
-  color: cyan;
-  -webkit-text-stroke: .7px white;
-  scale: 0.97;
+  animation: jj .8s linear infinite;
 }
 
 .home-info h2 {
@@ -234,8 +232,8 @@ a {
 
 .home-img .img-box {
   position: relative;
-  width: 28vw;
-  height: 28vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
   padding: 5px;
   display: flex;
@@ -265,13 +263,13 @@ a {
   position: absolute;
   width: 500px;
   height: 500px;
-  background: conic-gradient( transparent, transparent, transparent, transparent, rgb(172, 1, 1));
+  background: conic-gradient( transparent, transparent, transparent, transparent,cyan );
   transform: rotate(0deg);
-  animation: rotate 3s linear infinite;
+  animation: rotate 2s linear infinite;
 }
 
 .home-img .img-box:hover:after {
-  animation-delay: -1.5s;
+  animation-delay: -1s;
 }
   
 @keyframes rotate-border {
@@ -302,8 +300,8 @@ a {
 .home-img .img-box .img-item img {
   position: absolute;
   display: block;
-  top: -30px;
-  width: 80%;
+  top: -50px;
+  width: 100%;
   object-fit: cover;
   mix-blend-mode: lighten;
 }
@@ -320,9 +318,10 @@ a {
   color: white;
   visibility: hidden;
   opacity: 0;
-  animation: show-content 1.5s linear forwards;
-  animation-delay: 2.3s ;
+  animation: show-content 1s linear forwards;
+  animation-delay: 1.5s ;
   transition: 1.5s;
+  margin-bottom: 20%;
 }
 
 .about .img-about {
@@ -351,6 +350,10 @@ a {
   font-family: font1;
   -webkit-text-stroke: .7px cyan;
   top: 200px;
+}
+
+.about-content h2:hover {
+  animation: jj .8s linear infinite;
 }
 
 .about-content p {
@@ -403,8 +406,9 @@ a {
 .bars-animation {
   position: absolute;
   width: 100%;
-  height: 230%;
+  height: 400%;
   display: flex;
+  z-index: -1;
   z-index: -1;
 }
 
@@ -413,8 +417,8 @@ a {
   height: 100%;
   background: #1f242d;
   transform: translateY(-100%);
-  animation: show-bars 5s ease-in-out forwards;
-  animation-delay: calc( .1s * var(--1));
+  animation: show-bars 2s ease-in-out forwards;
+  animation-delay: calc( .10s * var(--1));
   z-index: 200;
 }
   
@@ -424,9 +428,182 @@ a {
   }
 }
 
+
+
+
+
+.skills {
+  background-color: #1f242d;
+  padding: 100px 12% 0;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.8s linear forwards;
+  animation-delay: 2s;
+  transition: 1.5s;
+  justify-content: center;
+}
+
+.skill-main {
+  width: 100%;
+  display: grid;
+  
+}
+
+.skill-bar {
+  margin-bottom: 2.3rem;
+}
+
+.skill-main h3 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  -webkit-text-stroke: .7px cyan;
+  font-family: font1;
+  transition: .5s;
+}
+
+.skill-left h3:hover{
+  animation: jj .8s linear infinite;
+}
+
+@keyframes jj {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: .95;
+  }
+  
+  100% {
+    scale: 1;
+  }
+}
+
+.skill-left .skill-bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: #961414c2;
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.skill-left .skill-bar .info p {
+  font-size: 20px;
+  font-family: Monospace;
+}
+
+.skill-bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: cyan;
+  border-radius: 25px;
+  box-shadow: 0 0 .5rem cyan;
+}
+
+.skill-bar .bar .html {
+  width: 63%;
+  animation: html 2s;
+  animation-delay: 2s;
+}
+
+.skill-bar .bar .css {
+  width: 47%;
+  animation: css 2.5s;
+  animation-delay: 2s;
+}
+
+.skill-bar .bar .c {
+  width: 24%;
+  animation: c 3s;
+  animation-delay: 2s;
+}
+
+.skill-bar .bar .mtk {
+  width: 89%;
+  animation: mtk 3.5s;
+  animation-delay: 2s;
+}
+
+.skill-bar .bar .art {
+  width: 100%;
+  animation: art 4s;
+  animation-delay: 2s;
+}
+
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 63%;
+  }
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 47%;
+  }
+}
+@keyframes c {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 24%;
+  }
+}
+@keyframes mtk {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 89%;
+  }
+}
+@keyframes art {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.skill-left h3 {
+  color: white;
+}
+.skill-bar .info p {
+  color: white;
+}
+
+span {
+  color: cyan;
+}
+
 footer {
-  background-color: gray;
+  background-color: #0b0b0b;
   margin-top: 200px;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.8s linear forwards;
+  animation-delay: 2s;
+  transition: 1.5s;
+  justify-content: center;
 }
 
 .footer-container {
@@ -510,4 +687,102 @@ footer {
   font-weight: 600;
   margin: 0px 5px;
   color: cyan;
+}
+
+
+
+
+@media (max-width: 991px) {
+  .home {
+    gap: 7px;
+    height: 100vh;
+    padding: 20px 10% 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    margin-left: 5px;
+  }
+  
+  .home-info {
+    margin-top: 90%;
+  }
+
+  .home-info h1 {
+    font-size: 30px;
+  }
+  
+  .home-info h2 {
+  font-size: 18px;
+  margin-top: 8px;
+  }
+  
+  .home-info p {
+  font-size: 10px;
+  margin: 8px 0 15px;
+  padding: 0;
+  font-weight: 800;
+  line-height: 1.6;
+  font-family: Monospace;
+  }
+  
+  .home-info .utn-sci .sci a {
+  padding: 2px; 
+  font-size: 17px;
+  margin: 0 3px;
+  }
+  
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -390%;
+}
+
+  .home-img .img-box {
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .utn {
+  padding: 8px 25px;
+  font-size: 13px;
+  font-weight: 500;
+}
+  
+  .navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90%;
+  padding: 5% 8%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+  
+.navbar .logo {
+  font-size: 15px;
+  font-weight: 700;
+  transition: .5s;
+}
+  
+.navbar ul li {
+  list-style: none;
+  margin-left: 12px;
+  transition: .5s;
+  margin-top: -1px;
+}
+  
+.navbar ul li a {
+  font-size: 12px;
+  font-weight: 300;
+  transition: 1s;
+  font-family: font1;
+}
+
+
 }
